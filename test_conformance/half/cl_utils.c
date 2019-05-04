@@ -326,7 +326,7 @@ void ReleaseCL(void)
 
 cl_uint numVecs(cl_uint count, int vectorSizeIdx, bool aligned) {
     if(aligned && g_arrVecSizes[vectorSizeIdx] == 3) {
-        return count/4;
+        return (count + 3)/4;
     }
     return  (count + g_arrVecSizes[vectorSizeIdx] - 1)/
     ( (g_arrVecSizes[vectorSizeIdx]) );
